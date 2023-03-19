@@ -1,7 +1,7 @@
 # SQL_HW_1
 
 ```
-Создать таблицу employees
+1. Создать таблицу employees
 - id. serial,  primary key,
 - employee_name. Varchar(50), not null
 ```
@@ -12,7 +12,7 @@ CREATE TABLE employees(
 );
 ```
 ```
-Наполнить таблицу employee 70 строками.
+2. Наполнить таблицу employee 70 строками.
 ```
 ```sql
 INSERT INTO employees(employee_name)
@@ -89,7 +89,7 @@ VALUES
 ('Светлана');
 ```
 ```
-Создать таблицу salary
+3. Создать таблицу salary
 - id. Serial  primary key,
 - monthly_salary. Int, not null
 ```
@@ -100,7 +100,7 @@ CREATE TABLE salary(
 );
 ```
 ```
-Наполнить таблицу salary 16 строками.
+4. Наполнить таблицу salary 16 строками.
 ```
 ```sql
 INSERT INTO salary(monthly_salary)
@@ -123,7 +123,7 @@ VALUES
 (2500);
 ```
 ```
-Создать таблицу employee_salary
+5. Создать таблицу employee_salary
 - id. Serial  primary key,
 - employee_id. Int, not null, unique
 - salary_id. Int, not null
@@ -140,7 +140,7 @@ CREATE TABLE employee_salary(
 );
 ```
 ```
-Наполнить таблицу employee_salary 40 строками:
+6. Наполнить таблицу employee_salary 40 строками:
 - в 10 строк из 40 вставить несуществующие employee_id
 ```
 ```sql
@@ -188,7 +188,7 @@ VALUES
 (90, 15);
 ```
 ```
-Создать таблицу roles
+7. Создать таблицу roles
 - id. Serial  primary key,
 - role_name. int, not null, unique
 ```
@@ -199,7 +199,7 @@ CREATE TABLE roles(
 );
 ```
 ```
-Поменять тип столба role_name с int на varchar(30)
+8. Поменять тип столба role_name с int на varchar(30)
 ```
 ```sql
 ALTER TABLE roles
@@ -207,7 +207,7 @@ ALTER COLUMN role_name
 TYPE VARCHAR(30);
 ```
 ```
-Наполнить таблицу roles 20 строками.
+9. Наполнить таблицу roles 20 строками.
 ```
 ```sql
 INSERT INTO roles(role_name)
@@ -234,7 +234,7 @@ VALUES
 ('Senior Automation QA engineer')
 ```
 ```
-Создать таблицу roles_employee
+10. Создать таблицу roles_employee
 - id. Serial  primary key,
 - employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
 - role_id. Int, not null (внешний ключ для таблицы roles, поле id)
@@ -251,7 +251,7 @@ CREATE TABLE roles_employee(
 );
 ```
 ```
-Наполнить таблицу roles_employee 40 строками.
+11. Наполнить таблицу roles_employee 40 строками.
 ```
 ```sql
 INSERT INTO roles_employee(employee_id, role_id)
