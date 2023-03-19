@@ -7,8 +7,8 @@
 ```
 ```sql
 CREATE TABLE employees(
-id SERIAL PRIMARY KEY,
-employee_name VARCHAR(50) NOT NULL
+  id SERIAL PRIMARY KEY,
+  employee_name VARCHAR(50) NOT NULL
 );
 ```
 ```
@@ -86,7 +86,7 @@ VALUES
 ('Евгений'),
 ('Иван'),
 ('Людмила'),
-('Светлана')
+('Светлана');
 ```
 ```
 Создать таблицу salary
@@ -95,8 +95,8 @@ VALUES
 ```
 ```sql
 CREATE TABLE salary(
-id SERIAL PRIMARY KEY,
-monthly_salary INT NOT NULL
+  id SERIAL PRIMARY KEY,
+  monthly_salary INT NOT NULL
 );
 ```
 ```
@@ -120,7 +120,7 @@ VALUES
 (2200),
 (2300),
 (2400),
-(2500)
+(2500);
 ```
 ```
 Создать таблицу employee_salary
@@ -130,13 +130,13 @@ VALUES
 ```
 ```sql
 CREATE TABLE employee_salary(
-	id SERIAL PRIMARY KEY,
-	employee_id INT NOT NULL unique,
-	salary_id INT NOT NULL,
-	FOREIGN KEY (employee_id)
-		REFERENCES employees(id),
-	FOREIGN KEY (salary_id)
-		REFERENCES salary(id)
+  id SERIAL PRIMARY KEY,
+  employee_id INT NOT NULL unique,
+  salary_id INT NOT NULL,
+  FOREIGN KEY (employee_id)
+    REFERENCES employees(id),
+  FOREIGN KEY (salary_id)
+    REFERENCES salary(id)
 );
 ```
 ```
@@ -194,15 +194,17 @@ VALUES
 ```
 ```sql
 CREATE TABLE roles(
-	id SERIAL PRIMARY KEY,
-	role_name INT NOT NULL unique
+  id SERIAL PRIMARY KEY,
+  role_name INT NOT NULL unique
 );
 ```
 ```
 Поменять тип столба role_name с int на varchar(30)
 ```
 ```sql
-ALTER TABLE roles ALTER COLUMN role_name TYPE VARCHAR(30)
+ALTER TABLE roles
+ALTER COLUMN role_name
+TYPE VARCHAR(30);
 ```
 ```
 Наполнить таблицу roles 20 строками.
@@ -239,14 +241,14 @@ VALUES
 ```
 ```sql
 CREATE TABLE roles_employee(
-	id SERIAL PRIMARY KEY,
-	employee_id INT NOT NULL unique,
-	role_id INT NOT NULL,
-	FOREIGN KEY (employee_id)
-		REFERENCES employees(id),
-	FOREIGN KEY (role_id)
-		REFERENCES roles(id)
-)
+  id SERIAL PRIMARY KEY,
+  employee_id INT NOT NULL unique,
+  role_id INT NOT NULL,
+  FOREIGN KEY (employee_id)
+    REFERENCES employees(id),
+  FOREIGN KEY (role_id)
+    REFERENCES roles(id)
+);
 ```
 ```
 Наполнить таблицу roles_employee 40 строками.
