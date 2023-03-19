@@ -1,5 +1,6 @@
 # SQL_HW_1
 
+## :small_blue_diamond:HW during Vadim Ksendzov course:small_blue_diamond:
 ```
 1. Создать таблицу employees
 - id. serial,  primary key,
